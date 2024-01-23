@@ -4,7 +4,7 @@ public:
         vector<int> result;
         int wordLength = words[0].length();
         int totalLength = wordLength * words.size();
-
+ṇ
         // Check if the input string is long enough for the concatenated words
         if (s.length() < totalLength) {
             return result;  // Return an empty result if not enough characters in s
