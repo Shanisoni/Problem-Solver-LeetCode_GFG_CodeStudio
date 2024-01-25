@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <br>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" pattern="\d{6}" title="Pincode must be numeric and contain 6 digits" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern="(?=.*[A-Z]).{8,}" title="Password must contain at least 1 capital letter and be at least 8 characters long" required>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var address = document.getElementById('address').value;
+            var pincode = document.getElementById('pincode').value;
+            var password = document.getElementById('password').value;
+
+            // Check if any field is left blank
+            if (name === '' || address === '' || pincode === '' || password === '') {
+                alert('Please fill in all fields.');
+                return false;
+            }
+
+            // Check if pincode is numeric and contains 6 digits
+            if (!/^\d{6}$/.test(pincode)) {
+                alert('Pincode must be numeric and contain 6 digits.');
+                return false;
+            }
+
+            // Check password constraints
+            if (!/(?=.*[A-Z]).{8,}/.test(password)) {
+                alert('Password must contain at least 1 capital letter and be at least 8 characters long.');
+                return false;
+            }
+
+            return true; // Form is valid
+        }
+    </script>
+
+</body>
+</html>
