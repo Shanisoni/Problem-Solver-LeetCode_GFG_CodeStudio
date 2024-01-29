@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Validation Form</title>
+    </head>
+    <body>
+    
+        <form onsubmit="return validate()" >
+            UserId <br> <input type="text" id="n1">
+            <br>
+            Contact <br> <input type="text"  id="n2" ><br>
+
+            Password <br> <input type="password"  id="n3">
+            <br>
+            Confirm Password  <br> <input type="password" id="n4">
+            <br>
+            <br> <button type="submit"  >Submit</button>  
+        </form>
+
+        <script>
+
+            function validate() {
+                var A = document.getElementById("n1").value;
+
+                var B = document.getElementById("n2").value;
+
+                var C = document.getElementById("n3").value;
+
+                var D = document.getElementById("n4").value;
+
+                if( A=="" || B==""|| C=="" || D==""){
+   
+                    alert("All fields are Manadatory ");
+                    return;
+                }
+                if(Password.length<5){
+                    alert("galt hai bhai ");
+                    return;
+                }
+               
+                    alert("form submitted successfully")
+                
+               
+
+            
+   
+           
+            } 
+
+               
+
+        </script>
+    </body>
+</html>

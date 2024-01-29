@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Example</title>
+</head>
+<body>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get form inputs
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Simple validation checks
+            if (username === '' || email === '' || password === '') {
+                alert('All fields are required. Please fill in all the fields.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password should be at least 6 characters long.');
+                return;
+            }
+
+            // Additional validation checks (e.g., email format)
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // If all validations pass, you can proceed with form submission or other actions
+            alert('Form submitted successfully!');
+        }
+    </script>
+</body>
+</html>
