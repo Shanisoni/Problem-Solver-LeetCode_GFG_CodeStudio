@@ -52,7 +52,8 @@ class Solution
 
         return head;
     }
-};
+};   
+
 
 void printList(struct Node *start)
 {
