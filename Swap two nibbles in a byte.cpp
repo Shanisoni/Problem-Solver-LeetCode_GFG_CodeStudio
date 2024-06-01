@@ -8,4 +8,5 @@ class Solution {
 
         return stoi(s,0,2);
     }
+    
 };
