@@ -18,6 +18,9 @@ public:
 
         // Iterate through each potential starting index for the substring
         for (int i = 0; i < wordLength; ++i) {
+
+
+            
             int left = i;
             int right = i;
             unordered_map<string, int> currentFreq;
